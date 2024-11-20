@@ -213,7 +213,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAltaExistenciaYprecioGravedadActionPerformed
 
     private void btnTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerminarActionPerformed
-       
+       //en esta linea es el boton de para cuando le piques al boton de terminar, se cierre todo
         System.exit(0); 
         
     }//GEN-LAST:event_btnTerminarActionPerformed
