@@ -34,7 +34,7 @@ public class Controlador {
             this.registrosMedicamentos.add(m);
         }
     }
-    public void editaMedicamento(Medicamentos m, int index){
+    public void editarMedicamento(Medicamentos m, int index){
         if(m != null){
         this.registrosMedicamentos.set(index, m);
         }

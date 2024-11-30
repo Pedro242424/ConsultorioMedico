@@ -190,11 +190,10 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
       
-        AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos();
+        AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos(this, -1);
         
         Catalogo.setVisible(true);
-        
-        this.dispose();
+       
         
       
     }//GEN-LAST:event_btnAgregarActionPerformed
