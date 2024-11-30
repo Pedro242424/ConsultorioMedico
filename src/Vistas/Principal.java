@@ -44,7 +44,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnTerminar.setText("7. Terminar");
+        btnTerminar.setText("Terminar");
         btnTerminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTerminarActionPerformed(evt);
@@ -77,7 +77,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        btnConsulta.setText("2. Consultas");
+        btnConsulta.setText(" Consultas");
         btnConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultaActionPerformed(evt);
