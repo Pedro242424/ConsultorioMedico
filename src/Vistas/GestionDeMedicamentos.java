@@ -17,46 +17,61 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionDeMedicamentos extends javax.swing.JFrame {
     
-    public static Controlador _Controlador = new Controlador();
-    
-    
-    public GestionDeMedicamentos() {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        this.llenarTabla();
-        
-    }
-    
-    
-    
-    public void llenarTabla(){
-        DefaultTableModel _modelo =(DefaultTableModel) this.tblTablaMedicamento.getModel();
-        
-        _modelo.setRowCount(0);
-        
-        for(Medicamentos _m : Principal._Controlador.consultarMedicamentosTodos()){
-             _modelo.addRow(new Object[]{_m.getId(),_m.getNombre(), _m.getDescripcion()
-                            ,_m.getCantidad(),_m.getGravedad(),_m.getPrecio()});
-        }
-        this.tblTablaMedicamento.setModel(_modelo);
-        //olololo
-    }
-    
-  
-    public void llenarTablaBuscar(List<Medicamentos> medicamentos){
+    // Instancia estática del controlador, utilizada para manejar el inventario de medicamentos.
+public static Controlador _Controlador = new Controlador();
 
-            
-            DefaultTableModel _modelo = (DefaultTableModel)tblTablaMedicamento.getModel();
-            _modelo.setRowCount(0);
+// Constructor de la clase GestionDeMedicamentos.
+public GestionDeMedicamentos() {
+    initComponents(); // Inicializa los componentes gráficos de la interfaz.
+    this.setLocationRelativeTo(null); // Centra la ventana en la pantalla.
+    this.llenarTabla(); // Llena la tabla con los datos actuales de medicamentos.
+}
 
-            for(Medicamentos _med : medicamentos){
-                
-                _modelo.addRow (new Object []{_med.getId(),_med.getNombre(), _med.getDescripcion(),_med.getCantidad(),
-                                _med.getGravedad(),_med.getPrecio()});
-            }
-            tblTablaMedicamento.setModel(_modelo);
-            
+// Método para llenar la tabla con todos los medicamentos registrados.
+public void llenarTabla() {
+    // Obtiene el modelo de datos de la tabla gráfica.
+    DefaultTableModel _modelo = (DefaultTableModel) this.tblTablaMedicamento.getModel();
+    
+    _modelo.setRowCount(0); // Limpia la tabla antes de agregar nuevos datos.
+    
+    // Itera sobre todos los medicamentos obtenidos del controlador.
+    for (Medicamentos _m : Principal._Controlador.consultarMedicamentosTodos()) {
+        // Agrega una nueva fila a la tabla con los atributos del medicamento.
+        _modelo.addRow(new Object[]{
+            _m.getId(), // ID del medicamento.
+            _m.getNombre(), // Nombre del medicamento.
+            _m.getDescripcion(), // Descripción del medicamento.
+            _m.getCantidad(), // Cantidad disponible.
+            _m.getGravedad(), // Nivel de gravedad.
+            _m.getPrecio() // Precio del medicamento.
+        });
     }
+    // Actualiza el modelo de la tabla con los datos llenados.
+    this.tblTablaMedicamento.setModel(_modelo);
+}
+
+// Método para llenar la tabla con una lista específica de medicamentos.
+public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
+    // Obtiene el modelo de datos de la tabla gráfica.
+    DefaultTableModel _modelo = (DefaultTableModel) tblTablaMedicamento.getModel();
+    _modelo.setRowCount(0); // Limpia la tabla antes de agregar nuevos datos.
+
+    // Itera sobre los medicamentos proporcionados en la lista.
+    for (Medicamentos _med : medicamentos) {
+        // Agrega una nueva fila a la tabla con los atributos del medicamento.
+        _modelo.addRow(new Object[]{
+            _med.getId(), // ID del medicamento.
+            _med.getNombre(), // Nombre del medicamento.
+            _med.getDescripcion(), // Descripción del medicamento.
+            _med.getCantidad(), // Cantidad disponible.
+            _med.getGravedad(), // Nivel de gravedad.
+            _med.getPrecio() // Precio del medicamento.
+        });
+    }
+    // Actualiza el modelo de la tabla con los datos llenados.
+    tblTablaMedicamento.setModel(_modelo);
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,9 +236,16 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
       
-        AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos(this, -1);
-        
-        Catalogo.setVisible(true);
+        // Crea una instancia de la clase AltaCatalogoMedicamentos.
+// Parámetros:
+// - `this`: Hace referencia a la instancia actual de la clase que llama al constructor. Esto permite que la nueva ventana (AltaCatalogoMedicamentos) pueda interactuar con esta.
+// - `-1`: Generalmente se utiliza como un indicador especial (por ejemplo, para crear un nuevo medicamento en lugar de editar uno existente).
+AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos(this, -1);
+
+// Muestra la ventana AltaCatalogoMedicamentos en la interfaz gráfica.
+// Al establecer `setVisible(true)`, la ventana se hace visible para el usuario.
+Catalogo.setVisible(true);
+
        
         
       
