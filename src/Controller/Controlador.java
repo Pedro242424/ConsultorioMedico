@@ -43,4 +43,5 @@ public class Controlador {
         return this.registrosMedicamentos.get(index);
     }
 }
-//Linea de prueba por rayan
+//Linea de prueba por rayan 
+// Segunda linea de prueba por el chavon
