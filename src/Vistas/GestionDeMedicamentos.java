@@ -6,6 +6,7 @@ package Vistas;
 
 import Controller.Controlador;
 import entities.Medicamentos;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -161,7 +162,7 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
                             .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(306, 306, 306)
+                .addGap(331, 331, 331)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -231,7 +232,8 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
     }//GEN-LAST:event_tblTablaMedicamentoMouseClicked
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
+            AltaCatalogoMedicamentos _frmTemp = new AltaCatalogoMedicamentos(this,tblTablaMedicamento.getSelectedRow()); //al momento de picarle, darle doble click, no guiara al formulario termporada, 
+            _frmTemp.setVisible(true);
     }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
