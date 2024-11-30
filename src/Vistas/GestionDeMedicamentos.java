@@ -222,7 +222,7 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnEliminarActionPerformed
-
+    //tabla
     private void tblTablaMedicamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTablaMedicamentoMouseClicked
         if(evt.getClickCount() == 2){
             AltaCatalogoMedicamentos _frmTemp = new AltaCatalogoMedicamentos(this,tblTablaMedicamento.getSelectedRow()); //al momento de picarle, darle doble click, no guiara al formulario termporada, 
