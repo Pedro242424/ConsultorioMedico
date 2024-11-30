@@ -18,6 +18,7 @@ public class Controlador {
     public Controlador(){
         Medicamentos _m = new Medicamentos();
         
+        _m.setId(0);
         _m.setNombre("paracetamol");
         _m.setDescripcion("El paracetamol es un analgesico y antipiretico usado para aliviar dolores leves a moderarlos "
                     + "y reducir la fiebre");

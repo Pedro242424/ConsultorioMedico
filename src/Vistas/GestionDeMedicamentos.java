@@ -104,20 +104,20 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
 
         tblTablaMedicamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Descripcion"
+                "ID", "Nombre", "Descripcion", "cantidad", "Gravedad", "precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
