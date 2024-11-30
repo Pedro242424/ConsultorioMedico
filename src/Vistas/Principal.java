@@ -239,7 +239,7 @@ public class Principal extends javax.swing.JFrame {
         
         this.dispose();
         //--------------------------------------------------------------------------------
-        
+        //bla bla bla
     }//GEN-LAST:event_btnBajaMedicamentoActionPerformed
 
     private void btnConsultaGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaGravedadActionPerformed
