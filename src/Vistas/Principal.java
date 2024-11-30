@@ -172,7 +172,7 @@ public class Principal extends javax.swing.JFrame {
         
         this.dispose();
         //--------------------------------------------------------------------------
-        
+        //alta
         
         
     }//GEN-LAST:event_btnAltaCatalogoActionPerformed
