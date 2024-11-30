@@ -37,8 +37,12 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
          
          Medicamentos _med = GestionDeMedicamentos._Controlador.consultarMedicamentosId(index);
          
+         this.txtId.setText(""+_med.getId());
          this.txtNombre.setText(_med.getNombre());
          this.txaDescripcion.setText(_med.getDescripcion());
+         this.txtCantidad.setText(""+_med.getCantidad());
+         this.txtGravedad.setText(""+_med.getGravedad());
+         this.txtPrecio.setText(""+_med.getPrecio());
          
          
      }
@@ -67,7 +71,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         txtGravedad = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,9 +115,9 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
 
         jLabel6.setText("ID:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtIdActionPerformed(evt);
             }
         });
 
@@ -155,7 +159,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                                    .addComponent(jTextField1))))
+                                    .addComponent(txtId))))
                         .addContainerGap(148, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -170,7 +174,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -235,14 +239,15 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
            
             Medicamentos _medicamentos = new Medicamentos();
 
-            _medicamentos.getId();
+            _medicamentos.setId(Integer.parseInt(txtId.getText()));
             _medicamentos.setNombre(txtNombre.getText());
             _medicamentos.setDescripcion(txaDescripcion.getText());
             _medicamentos.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            _medicamentos.setGravedad(Integer.parseInt(txtGravedad.getText()));
+            _medicamentos.setPrecio(Double.parseDouble(txtPrecio.getText()));
             
             
-            
-            
+     
             //metodo para guardar
             if(this.index > -1){
                 Principal._Controlador.editaMedicamento(_medicamentos, index);
@@ -260,9 +265,9 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,10 +316,10 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextArea txaDescripcion;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtGravedad;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables
