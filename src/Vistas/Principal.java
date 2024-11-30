@@ -34,15 +34,13 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("--------MENU PRINCIPAL--------");
 
         btnAltaCatalogo.setBackground(new java.awt.Color(0, 255, 255));
         btnAltaCatalogo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnAltaCatalogo.setForeground(new java.awt.Color(0, 0, 0));
-        btnAltaCatalogo.setText("1. Gestion del Medicamento ");
+        btnAltaCatalogo.setText("Gestion de medicamentos");
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaCatalogoActionPerformed(evt);
