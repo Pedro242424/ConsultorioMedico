@@ -43,3 +43,4 @@ public class Controlador {
         return this.registrosMedicamentos.get(index);
     }
 }
+//Linea de prueba por rayan
