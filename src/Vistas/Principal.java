@@ -32,7 +32,6 @@ public class Principal extends javax.swing.JFrame {
         btnAltaCatalogo = new javax.swing.JButton();
         btnAltaExistenciaYprecioGravedad = new javax.swing.JButton();
         btnAcualizacionExitenciaYprecio = new javax.swing.JButton();
-        btnBajaMedicamento = new javax.swing.JButton();
         btnConsultaGravedad = new javax.swing.JButton();
         btnConsultaCostoTotal = new javax.swing.JButton();
         btnTerminar = new javax.swing.JButton();
@@ -46,7 +45,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("--------MENU PRINCIPAL--------");
 
-        btnAltaCatalogo.setText("1. Alta en catalogo de medicamentos ");
+        btnAltaCatalogo.setText("1. Gestion del Medicamento ");
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaCatalogoActionPerformed(evt);
@@ -64,13 +63,6 @@ public class Principal extends javax.swing.JFrame {
         btnAcualizacionExitenciaYprecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcualizacionExitenciaYprecioActionPerformed(evt);
-            }
-        });
-
-        btnBajaMedicamento.setText("4. Baja a medicamento");
-        btnBajaMedicamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBajaMedicamentoActionPerformed(evt);
             }
         });
 
@@ -133,7 +125,6 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAltaExistenciaYprecioGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAcualizacionExitenciaYprecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBajaMedicamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConsultaGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConsultaCostoTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                             .addComponent(btnTerminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -155,9 +146,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnAltaExistenciaYprecioGravedad)
                 .addGap(24, 24, 24)
                 .addComponent(btnAcualizacionExitenciaYprecio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBajaMedicamento)
-                .addGap(18, 18, 18)
+                .addGap(53, 53, 53)
                 .addComponent(btnConsultaGravedad)
                 .addGap(18, 18, 18)
                 .addComponent(btnConsultaCostoTotal)
@@ -188,9 +177,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnAltaCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaCatalogoActionPerformed
         //en esta parte del codigo hacemos una conexion a los demas jFrame
-        AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos();
+        GestionDeMedicamentos Gestion = new GestionDeMedicamentos();
         
-        Catalogo.setVisible(true);
+        Gestion.setVisible(true);
         
         this.dispose();
         //--------------------------------------------------------------------------
@@ -230,17 +219,6 @@ public class Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnAcualizacionExitenciaYprecioActionPerformed
-
-    private void btnBajaMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBajaMedicamentoActionPerformed
-        //en esta parte del codigo hacemos una conexion a los demas jFrame         
-        BajaMedicamento Baja = new BajaMedicamento();
-        
-        Baja.setVisible(true);
-        
-        this.dispose();
-        //--------------------------------------------------------------------------------
-        //bla bla bla
-    }//GEN-LAST:event_btnBajaMedicamentoActionPerformed
 
     private void btnConsultaGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaGravedadActionPerformed
         //en esta parte del codigo hacemos una conexion a los demas jFrame        
@@ -305,7 +283,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAcualizacionExitenciaYprecio;
     private javax.swing.JButton btnAltaCatalogo;
     private javax.swing.JButton btnAltaExistenciaYprecioGravedad;
-    private javax.swing.JButton btnBajaMedicamento;
     private javax.swing.JButton btnConsultaCostoTotal;
     private javax.swing.JButton btnConsultaGravedad;
     private javax.swing.JButton btnTerminar;
