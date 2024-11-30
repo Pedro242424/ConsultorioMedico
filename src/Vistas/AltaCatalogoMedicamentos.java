@@ -6,6 +6,7 @@ package Vistas;
 
 import Controller.Controlador;
 import entities.Medicamentos;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,6 +18,20 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     int index = 0;
     public AltaCatalogoMedicamentos() {
         initComponents();
+    }
+
+    
+     public AltaCatalogoMedicamentos(JFrame frame, int index) {
+        initComponents();
+        this._frmTablaMedicamento = (GestionDeMedicamentos) frame;  
+        this.setLocationRelativeTo(null);
+        this.index = index;
+        
+        
+        if(index > -1){
+            this.llenarCampos();
+        }
+        
     }
     
     public void llenarCampos(){
@@ -168,7 +183,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
            
             _frmTablaMedicamento.llenarTabla();
             
-            
+            this.dispose();
         
         }catch (Exception ex){
          ex.printStackTrace();
