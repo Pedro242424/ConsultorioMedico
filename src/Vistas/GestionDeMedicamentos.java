@@ -6,6 +6,8 @@ package Vistas;
 
 import Controller.Controlador;
 import entities.Medicamentos;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,7 +19,12 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
     public static Controlador _Controlador = new Controlador();
     
     
-    
+    public GestionDeMedicamentos() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.llenarTabla();
+        
+    }
     
     
     
@@ -33,18 +40,19 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         //olololo
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public GestionDeMedicamentos() {
-        initComponents();
+  
+    public void llenarTablaBuscar(List<Medicamentos> medicamentos){
+
+            
+            DefaultTableModel _modelo = (DefaultTableModel)tblTablaMedicamento.getModel();
+            _modelo.setRowCount(0);
+
+            for(Medicamentos _med : medicamentos){
+                
+                _modelo.addRow (new Object []{_med.getNombre(), _med.getDescripcion()});
+            }
+            tblTablaMedicamento.setModel(_modelo);
+            
     }
 
     /**
@@ -81,6 +89,11 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +130,11 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         });
         tblTablaMedicamento.getTableHeader().setResizingAllowed(false);
         tblTablaMedicamento.getTableHeader().setReorderingAllowed(false);
+        tblTablaMedicamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblTablaMedicamentoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblTablaMedicamento);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -168,10 +186,6 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarActionPerformed
-
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
       
         AltaCatalogoMedicamentos Catalogo = new AltaCatalogoMedicamentos();
@@ -193,6 +207,31 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if(tblTablaMedicamento.getSelectedRow() > -1){
+         Principal._Controlador.eliminarMedicamento(tblTablaMedicamento.getSelectedRow());
+            this.llenarTabla();
+            JOptionPane.showMessageDialog(null, "El registro fue eliminado correctamente", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "por favor seleccion un elemento", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void tblTablaMedicamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTablaMedicamentoMouseClicked
+        if(evt.getClickCount() == 2){
+            AltaCatalogoMedicamentos _frmTemp = new AltaCatalogoMedicamentos(this,tblTablaMedicamento.getSelectedRow()); //al momento de picarle, darle doble click, no guiara al formulario termporada, 
+            _frmTemp.setVisible(true);
+        }
+    }//GEN-LAST:event_tblTablaMedicamentoMouseClicked
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
