@@ -34,7 +34,8 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
         _modelo.setRowCount(0);
         
         for(Medicamentos _m : Principal._Controlador.consultarMedicamentosTodos()){
-             _modelo.addRow(new Object[]{_m.getNombre(), _m.getDescripcion()});
+             _modelo.addRow(new Object[]{_m.getId(),_m.getNombre(), _m.getDescripcion()
+                            ,_m.getCantidad(),_m.getGravedad(),_m.getPrecio()});
         }
         this.tblTablaMedicamento.setModel(_modelo);
         //olololo
@@ -49,7 +50,8 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
 
             for(Medicamentos _med : medicamentos){
                 
-                _modelo.addRow (new Object []{_med.getNombre(), _med.getDescripcion()});
+                _modelo.addRow (new Object []{_med.getId(),_med.getNombre(), _med.getDescripcion(),_med.getCantidad(),
+                                _med.getGravedad(),_med.getPrecio()});
             }
             tblTablaMedicamento.setModel(_modelo);
             
