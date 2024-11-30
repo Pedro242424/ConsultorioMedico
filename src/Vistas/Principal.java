@@ -34,9 +34,14 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("--------MENU PRINCIPAL--------");
 
+        btnAltaCatalogo.setBackground(new java.awt.Color(0, 255, 255));
+        btnAltaCatalogo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnAltaCatalogo.setForeground(new java.awt.Color(0, 0, 0));
         btnAltaCatalogo.setText("1. Gestion del Medicamento ");
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,6 +49,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnTerminar.setBackground(new java.awt.Color(204, 0, 0));
+        btnTerminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnTerminar.setForeground(new java.awt.Color(0, 0, 0));
         btnTerminar.setText("Terminar");
         btnTerminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +85,9 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        btnConsulta.setBackground(new java.awt.Color(204, 204, 0));
+        btnConsulta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnConsulta.setForeground(new java.awt.Color(0, 0, 0));
         btnConsulta.setText(" Consultas");
         btnConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
