@@ -31,7 +31,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAltaCatalogo = new javax.swing.JButton();
         btnAltaExistenciaYprecioGravedad = new javax.swing.JButton();
-        btnAcualizacionExitenciaYprecio = new javax.swing.JButton();
         btnConsultaGravedad = new javax.swing.JButton();
         btnConsultaCostoTotal = new javax.swing.JButton();
         btnTerminar = new javax.swing.JButton();
@@ -56,13 +55,6 @@ public class Principal extends javax.swing.JFrame {
         btnAltaExistenciaYprecioGravedad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaExistenciaYprecioGravedadActionPerformed(evt);
-            }
-        });
-
-        btnAcualizacionExitenciaYprecio.setText("3. Actualizacion de existencia/ precio");
-        btnAcualizacionExitenciaYprecio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcualizacionExitenciaYprecioActionPerformed(evt);
             }
         });
 
@@ -124,7 +116,6 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAltaExistenciaYprecioGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAcualizacionExitenciaYprecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConsultaGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConsultaCostoTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
                             .addComponent(btnTerminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -144,15 +135,13 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnAltaCatalogo)
                 .addGap(29, 29, 29)
                 .addComponent(btnAltaExistenciaYprecioGravedad)
-                .addGap(24, 24, 24)
-                .addComponent(btnAcualizacionExitenciaYprecio)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addComponent(btnConsultaGravedad)
                 .addGap(18, 18, 18)
                 .addComponent(btnConsultaCostoTotal)
                 .addGap(18, 18, 18)
                 .addComponent(btnTerminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -189,16 +178,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAltaCatalogoActionPerformed
 
     private void btnAltaExistenciaYprecioGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaExistenciaYprecioGravedadActionPerformed
-        //en esta parte del codigo hacemos una conexion a los demas jFrame 
+        /*en esta parte del codigo hacemos una conexion a los demas jFrame 
         AltaExistenciaYprecioGravedad Existencia = new AltaExistenciaYprecioGravedad();
         
         Existencia.setVisible(true);
         
         this.dispose();
-        //-----------------------------------------------------------------------------
-        
-        
-        
+        */
+ 
         
     }//GEN-LAST:event_btnAltaExistenciaYprecioGravedadActionPerformed
 
@@ -208,36 +195,24 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTerminarActionPerformed
 
-    private void btnAcualizacionExitenciaYprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcualizacionExitenciaYprecioActionPerformed
-        //en esta parte del codigo hacemos una conexion a los demas jFrame         
-        ActualizacionExistenciaYprecio ActualizacionExistencia = new ActualizacionExistenciaYprecio();
-        
-        ActualizacionExistencia.setVisible(true);
-        
-        this.dispose();
-        //--------------------------------------------------------------------------------
-        
-        
-    }//GEN-LAST:event_btnAcualizacionExitenciaYprecioActionPerformed
-
     private void btnConsultaGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaGravedadActionPerformed
-        //en esta parte del codigo hacemos una conexion a los demas jFrame        
+        /*en esta parte del codigo hacemos una conexion a los demas jFrame        
         ConsultaTotalGravedad Gravedad = new ConsultaTotalGravedad();
         
         Gravedad.setVisible(true);
         
         this.dispose();
-        //---------------------------------------------------------------------------------
+        */
     }//GEN-LAST:event_btnConsultaGravedadActionPerformed
 
     private void btnConsultaCostoTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaCostoTotalActionPerformed
-        //en esta parte del codigo hacemos una conexion a los demas jFrame      
+        /*en esta parte del codigo hacemos una conexion a los demas jFrame      
          ConsultaTotalDeInventario Inventario = new ConsultaTotalDeInventario();
         
         Inventario.setVisible(true);
         
         this.dispose();
-        //----------------------------------------------------------------------------------
+        */
         
     }//GEN-LAST:event_btnConsultaCostoTotalActionPerformed
 
@@ -280,7 +255,6 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAcualizacionExitenciaYprecio;
     private javax.swing.JButton btnAltaCatalogo;
     private javax.swing.JButton btnAltaExistenciaYprecioGravedad;
     private javax.swing.JButton btnConsultaCostoTotal;
