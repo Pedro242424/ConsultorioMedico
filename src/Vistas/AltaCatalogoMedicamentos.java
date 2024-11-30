@@ -13,64 +13,41 @@ import javax.swing.JFrame;
  */
 public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     
-   // Clase AltaCatalogoMedicamentos: Administra la interfaz gráfica para agregar o editar medicamentos.
-
-GestionDeMedicamentos _frmTablaMedicamento = new GestionDeMedicamentos(); 
-// Variable que almacena la referencia a la ventana principal de gestión de medicamentos.
-
-int index = 0; 
-// Índice del medicamento que se va a editar. Si es -1, se interpreta como "nuevo medicamento".
-
-// Constructor por defecto de la clase AltaCatalogoMedicamentos.
-public AltaCatalogoMedicamentos() {
-    initComponents(); 
-    // Inicializa los componentes gráficos de la interfaz.
-}
-
-// Constructor que permite recibir una ventana principal (frame) y el índice del medicamento a editar.
-public AltaCatalogoMedicamentos(JFrame frame, int index) {
-    initComponents(); 
-    // Inicializa los componentes gráficos de la interfaz.
+  GestionDeMedicamentos _frmTablaMedicamento = new GestionDeMedicamentos();
+    int index = 0;
     
-    this._frmTablaMedicamento = (GestionDeMedicamentos) frame; 
-    // Asocia la referencia de la ventana principal a la variable local.
-    
-    this.setLocationRelativeTo(null); 
-    // Centra la ventana en la pantalla.
-    
-    this.index = index; 
-    // Almacena el índice del medicamento a editar.
-    
-    if (index > -1) { 
-        // Si el índice es mayor a -1, significa que se debe llenar los campos con los datos del medicamento.
-        this.llenarCampos();
+    public AltaCatalogoMedicamentos() {
+        initComponents();
+        this.setLocationRelativeTo(null);
     }
-}
 
-// Método para llenar los campos de texto con los datos del medicamento seleccionado.
-public void llenarCampos() {
-    // Obtiene el medicamento correspondiente al índice proporcionado desde el controlador.
-    Medicamentos _med = GestionDeMedicamentos._Controlador.consultarMedicamentosId(index);
-
-    // Llena los campos de texto con los atributos del medicamento.
-    this.txtId.setText("" + _med.getId()); 
-    // Convierte el ID a texto y lo asigna al campo de texto de ID.
     
-    this.txtNombre.setText(_med.getNombre()); 
-    // Asigna el nombre del medicamento al campo de texto correspondiente.
+     public AltaCatalogoMedicamentos(JFrame frame, int index) {
+        initComponents();
+        this._frmTablaMedicamento=(GestionDeMedicamentos) frame; //this._frmTablaMedicamento = (GestionDeMedicamentos) frame;  
+        this.setLocationRelativeTo(null);
+        this.index = index;
+        
+        
+        if(index > -1){
+            this.llenarCampos();
+        }
+        
+    }
     
-    this.txaDescripcion.setText(_med.getDescripcion()); 
-    // Asigna la descripción del medicamento al área de texto correspondiente.
-    
-    this.txtCantidad.setText("" + _med.getCantidad()); 
-    // Convierte la cantidad a texto y la asigna al campo de texto.
-    
-    this.txtGravedad.setText("" + _med.getGravedad()); 
-    // Convierte la gravedad a texto y la asigna al campo de texto.
-    
-    this.txtPrecio.setText("" + _med.getPrecio()); 
-    // Convierte el precio a texto y lo asigna al campo de texto.
-}
+    public void llenarCampos(){
+         
+         Medicamentos _med = GestionDeMedicamentos._Controlador.consultarMedicamentosId(index);
+         
+         this.txtId.setText(""+_med.getId());
+         this.txtNombre.setText(_med.getNombre());
+         this.txaDescripcion.setText(_med.getDescripcion());
+         this.txtCantidad.setText(""+_med.getCantidad());
+         this.txtGravedad.setText(""+_med.getGravedad());
+         this.txtPrecio.setText(""+_med.getPrecio());
+         
+         
+     }
 
 
     /**
@@ -265,9 +242,9 @@ public void llenarCampos() {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
        
-         GestionDeMedicamentos newframe = new GestionDeMedicamentos();
+         GestionDeMedicamentos regresar = new GestionDeMedicamentos();
         
-        newframe.setVisible(true);
+        regresar.setVisible(true);
         
         this.dispose();
         
