@@ -207,12 +207,11 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
            
             Medicamentos _medicamentos = new Medicamentos();
 
-            
+            _medicamentos.getId();
             _medicamentos.setNombre(txtNombre.getText());
             _medicamentos.setDescripcion(txaDescripcion.getText());
-            _medicamentos.setCantidad(0);
-            _medicamentos.getGravedad();
-            _medicamentos.getPrecio();
+            _medicamentos.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            
             
             
             
