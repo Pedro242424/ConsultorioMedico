@@ -19,20 +19,29 @@ public class Controlador {
         Medicamentos _m = new Medicamentos();
         
         _m.setNombre("paracetamol");
-        _m.setDescripcion("El paracetamol es un analgesico y antipiretico usado para aliviar dolores leves a moderarlos y reducir la fiebre");
-        _m.setCantidad_Stock("30");
+        _m.setDescripcion("El paracetamol es un analgesico y antipiretico usado para aliviar dolores leves a moderarlos "
+                    + "y reducir la fiebre");
+        _m.setCantidad(20);
+        _m.setGravedad(0);
+        _m.setPrecio(50.50);
         
         this.registrosMedicamentos.add(_m);
     }
     
     public void agregarMedicamento(Medicamentos m){
-        
+        if(m != null){
+            this.registrosMedicamentos.add(m);
+        }
     }
-    public void editaMedicamento(Medicamentos t, int index){
-        
+    public void editaMedicamento(Medicamentos m, int index){
+        if(m != null){
+        this.registrosMedicamentos.set(index, m);
+        }
     }
     public void eliminarMedicamento(int index){
-        
+        if(index > -1){
+        this.registrosMedicamentos.remove(index);
+        }
     }
     
     public List<Medicamentos>consultarMedicamentosTodos(){
@@ -43,5 +52,4 @@ public class Controlador {
         return this.registrosMedicamentos.get(index);
     }
 }
-//Linea de prueba por rayan 
-// Segunda linea de prueba por el chavon
+

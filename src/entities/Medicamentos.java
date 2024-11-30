@@ -9,11 +9,14 @@ package entities;
  * @author kiwic
  */
 public class Medicamentos {
-    private int id = 0;
-    private String nombre = new String();
-    private String descripcion = new String();
-    private String Cantidad_Stock = new String();
-
+    
+    private int id = 0; //Idenfificador unico de medicamento
+    private String nombre = new String();  // Nombre del medicamento puede haber multiples
+    private String descripcion = new String(); // Ni se porque esta aqui pero bueno
+    private int gravedad = 0; // Nivel de gravedad en un rango del 0-2
+    private int cantidad = 0;//  Cantidad de existencias del medicamento
+    private double precio = 0;// Precio del medicamento en pesos
+    
     public Medicamentos() {
     }
 
@@ -40,14 +43,28 @@ public class Medicamentos {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    public String getCantidad_Stock() {
-        return Cantidad_Stock;
+    public int getGravedad() {
+        return gravedad;
     }
 
-    public void setCantidad_Stock(String Cantidad_Stock) {
-        this.Cantidad_Stock = Cantidad_Stock;
+    public void setGravedad(int gravedad) {
+        this.gravedad = gravedad;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
     
-    
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+   
 }

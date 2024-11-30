@@ -239,7 +239,7 @@ public class Principal extends javax.swing.JFrame {
         
         this.dispose();
         //--------------------------------------------------------------------------------
-        
+        //bla bla bla
     }//GEN-LAST:event_btnBajaMedicamentoActionPerformed
 
     private void btnConsultaGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaGravedadActionPerformed
@@ -288,6 +288,9 @@ public class Principal extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
