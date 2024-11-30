@@ -30,6 +30,7 @@ public class GestionDeMedicamentos extends javax.swing.JFrame {
              _modelo.addRow(new Object[]{_m.getNombre(), _m.getDescripcion()});
         }
         this.tblTablaMedicamento.setModel(_modelo);
+        //olololo
     }
     
     
