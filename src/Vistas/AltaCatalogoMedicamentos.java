@@ -4,7 +4,6 @@
  */
 package Vistas;
 
-import Controller.Controlador;
 import entities.Medicamentos;
 import javax.swing.JFrame;
 
