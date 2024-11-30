@@ -25,9 +25,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnAltaCatalogo = new javax.swing.JButton();
-        btnAltaExistenciaYprecioGravedad = new javax.swing.JButton();
-        btnConsultaGravedad = new javax.swing.JButton();
-        btnConsultaCostoTotal = new javax.swing.JButton();
         btnTerminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -43,27 +40,6 @@ public class Principal extends javax.swing.JFrame {
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaCatalogoActionPerformed(evt);
-            }
-        });
-
-        btnAltaExistenciaYprecioGravedad.setText("2. Alta de existencia/ precio por gravedad");
-        btnAltaExistenciaYprecioGravedad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAltaExistenciaYprecioGravedadActionPerformed(evt);
-            }
-        });
-
-        btnConsultaGravedad.setText("5. Consulta total de medicamentos por gravedad");
-        btnConsultaGravedad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaGravedadActionPerformed(evt);
-            }
-        });
-
-        btnConsultaCostoTotal.setText("6. Consulta total costos de inventario por medicamento");
-        btnConsultaCostoTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaCostoTotalActionPerformed(evt);
             }
         });
 
@@ -107,53 +83,48 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAltaExistenciaYprecioGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnConsultaGravedad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnConsultaCostoTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                            .addComponent(btnTerminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(116, 116, 116)))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(174, 174, 174))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnTerminar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))))
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(35, 35, 35)
-                .addComponent(btnAltaCatalogo)
-                .addGap(29, 29, 29)
-                .addComponent(btnAltaExistenciaYprecioGravedad)
-                .addGap(18, 18, 18)
-                .addComponent(btnConsultaGravedad)
-                .addGap(18, 18, 18)
-                .addComponent(btnConsultaCostoTotal)
-                .addGap(18, 18, 18)
+                .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135)
                 .addComponent(btnTerminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -172,44 +143,11 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnAltaCatalogoActionPerformed
 
-    private void btnAltaExistenciaYprecioGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaExistenciaYprecioGravedadActionPerformed
-        /*en esta parte del codigo hacemos una conexion a los demas jFrame 
-        AltaExistenciaYprecioGravedad Existencia = new AltaExistenciaYprecioGravedad();
-        
-        Existencia.setVisible(true);
-        
-        this.dispose();
-        */
- 
-        
-    }//GEN-LAST:event_btnAltaExistenciaYprecioGravedadActionPerformed
-
     private void btnTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerminarActionPerformed
        //en esta linea es el boton de para cuando le piques al boton de terminar, se cierre todo
         System.exit(0); 
         
     }//GEN-LAST:event_btnTerminarActionPerformed
-
-    private void btnConsultaGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaGravedadActionPerformed
-        /*en esta parte del codigo hacemos una conexion a los demas jFrame        
-        ConsultaTotalGravedad Gravedad = new ConsultaTotalGravedad();
-        
-        Gravedad.setVisible(true);
-        
-        this.dispose();
-        */
-    }//GEN-LAST:event_btnConsultaGravedadActionPerformed
-
-    private void btnConsultaCostoTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaCostoTotalActionPerformed
-        /*en esta parte del codigo hacemos una conexion a los demas jFrame      
-         ConsultaTotalDeInventario Inventario = new ConsultaTotalDeInventario();
-        
-        Inventario.setVisible(true);
-        
-        this.dispose();
-        */
-        
-    }//GEN-LAST:event_btnConsultaCostoTotalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,9 +189,6 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltaCatalogo;
-    private javax.swing.JButton btnAltaExistenciaYprecioGravedad;
-    private javax.swing.JButton btnConsultaCostoTotal;
-    private javax.swing.JButton btnConsultaGravedad;
     private javax.swing.JButton btnTerminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
