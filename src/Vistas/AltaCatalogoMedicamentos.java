@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  * @author kiwic
  */
 public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
-    
+    //aqui
   GestionDeMedicamentos _frmTablaMedicamento = new GestionDeMedicamentos();
     int index = 0;
     
