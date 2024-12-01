@@ -242,9 +242,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
        
-         GestionDeMedicamentos regresar = new GestionDeMedicamentos();
-        
-        regresar.setVisible(true);
+         
         
         this.dispose();
         
