@@ -37,7 +37,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     
     public void llenarCampos(){
          
-         Medicamentos _med = GestionDeMedicamentos._Controlador.consultarMedicamentosId(index);
+         Medicamentos _med = Principal._Controlador.consultarMedicamentosId(index);
          
          this.txtId.setText(""+_med.getId());
          this.txtNombre.setText(_med.getNombre());
