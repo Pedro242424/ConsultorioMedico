@@ -6,6 +6,7 @@ package Vistas;
 
 import entities.Medicamentos;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -242,11 +243,8 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
        
-         
-        
         this.dispose();
-        
-        
+         
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
@@ -280,7 +278,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
             this.dispose();
         
         }catch (Exception ex){
-         ex.printStackTrace();
+         JOptionPane.showMessageDialog(this, "Entrada invalidada" , "Error de entreda", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
