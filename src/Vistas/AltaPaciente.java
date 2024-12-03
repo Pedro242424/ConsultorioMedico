@@ -9,7 +9,10 @@ package Vistas;
 
 public class AltaPaciente extends javax.swing.JFrame {
     
-
+ 
+    public AltaPaciente() {
+        initComponents();
+    }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

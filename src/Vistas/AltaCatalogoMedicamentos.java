@@ -138,6 +138,11 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         jLabel7.setText("Alta Medicamentos");
 
         cmbGravedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
+        cmbGravedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbGravedadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -282,6 +287,10 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
+
+    private void cmbGravedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGravedadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbGravedadActionPerformed
 
     /**
      * @param args the command line arguments
