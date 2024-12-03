@@ -11,9 +11,9 @@ package entities;
 public class paciente {
     
    
-    private String nombrepaciente = new String();  // Nombre del medicamento puede haber multiples
-    private String direccion = new String(); // Ni se porque esta aqui pero bueno
-    private String edad = new String(); // Nivel de gravedad en un rango del 0-2
+    private String nombrepaciente = new String();  
+    private String direccion = new String(); 
+    private String edad = new String(); 
     private String estatura = new String();
     private String peso = new String();
     
