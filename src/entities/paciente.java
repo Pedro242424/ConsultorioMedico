@@ -13,10 +13,10 @@ public class paciente {
    
     private String nombrepaciente = new String();  
     private String direccion = new String(); 
-    private String edad = new String(); 
-    private String estatura = new String();
-    private String peso = new String();
-    private String alergias = new String();
+    private int edad = 0; 
+    private double estatura = 0;
+    private double peso = 0;
+    private Medicamentos alergias = new Medicamentos();
     private String telefono = new String();
     
     public paciente(){
@@ -39,35 +39,35 @@ public class paciente {
         this.direccion = direccion;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public String getEstatura() {
+    public double getEstatura() {
         return estatura;
     }
 
-    public void setEstatura(String estatura) {
+    public void setEstatura(double estatura) {
         this.estatura = estatura;
     }
 
-    public String getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
-    public String getAlergias() {
+    public Medicamentos getAlergias() {
         return alergias;
     }
 
-    public void setAlergias(String alergias) {
+    public void setAlergias(Medicamentos alergias) {
         this.alergias = alergias;
     }
 
@@ -78,6 +78,6 @@ public class paciente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
     
 }
