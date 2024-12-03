@@ -12,11 +12,11 @@ import java.util.List;
  *
  * @author kiwic
  */
-public class Controlador {
+public class Medicamento {
     
   private List<Medicamentos> registrosMedicamentos = new ArrayList();
     
-    public Controlador(){
+    public Medicamento(){
         Medicamentos _m = new Medicamentos();
         
         _m.setId(0);

@@ -4,7 +4,7 @@
  */
 package Vistas;
 
-import Controller.Controlador;
+import Controller.Medicamento;
 import entities.Medicamentos;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class GestionDeMedicamentos extends javax.swing.JFrame {
     
     // Instancia estática del controlador, utilizada para manejar el inventario de medicamentos.
-public static Controlador _Controlador = new Controlador();
+public static Medicamento _Controlador = new Medicamento();
 
 // Constructor de la clase GestionDeMedicamentos.
 public GestionDeMedicamentos() {

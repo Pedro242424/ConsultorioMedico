@@ -4,10 +4,7 @@
  */
 package Controller;
 
-/**
- *
- * @author kiwic
- */
+
 public class ConsultorioImpl {
     
 }
