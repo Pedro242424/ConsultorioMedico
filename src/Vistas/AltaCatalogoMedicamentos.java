@@ -43,7 +43,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
          this.txtNombre.setText(_med.getNombre());
          this.txaDescripcion.setText(_med.getDescripcion());
          this.txtCantidad.setText(""+_med.getCantidad());
-         this.txtGravedad.setText(""+_med.getGravedad());
+         this.cmbGravedad.setSelectedIndex(_med.getGravedad() ); ;
          this.txtPrecio.setText(""+_med.getPrecio());
          
          
@@ -71,11 +71,11 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtCantidad = new javax.swing.JTextField();
-        txtGravedad = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        cmbGravedad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,11 +91,9 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Descripcion:");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +109,6 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
 
         btnGuardar.setBackground(new java.awt.Color(0, 255, 51));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,19 +117,15 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cantidad:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Gravedad:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Precio:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ID:");
 
         txtId.addActionListener(new java.awt.event.ActionListener() {
@@ -142,8 +135,9 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Alta Medicamentos");
+
+        cmbGravedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,8 +165,8 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                                    .addComponent(txtGravedad)
-                                    .addComponent(txtPrecio)))
+                                    .addComponent(txtPrecio)
+                                    .addComponent(cmbGravedad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,7 +203,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,7 +256,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
             _medicamentos.setNombre(txtNombre.getText());
             _medicamentos.setDescripcion(txaDescripcion.getText());
             _medicamentos.setCantidad(Integer.parseInt(txtCantidad.getText()));
-            _medicamentos.setGravedad(Integer.parseInt(txtGravedad.getText()));
+            _medicamentos.setGravedad(Integer.parseInt(cmbGravedad.getSelectedItem().toString()));
             _medicamentos.setPrecio(Double.parseDouble(txtPrecio.getText()));
             
             
@@ -281,6 +275,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
         
         }catch (Exception ex){
          ex.printStackTrace();
+         
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -326,6 +321,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cmbGravedad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -337,7 +333,6 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txaDescripcion;
     private javax.swing.JTextField txtCantidad;
-    private javax.swing.JTextField txtGravedad;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecio;
