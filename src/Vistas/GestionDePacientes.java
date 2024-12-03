@@ -68,6 +68,8 @@ public class GestionDePacientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+
         tblTablaPaciente.setBackground(new java.awt.Color(255, 255, 102));
         tblTablaPaciente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         tblTablaPaciente.setForeground(new java.awt.Color(0, 0, 0));
@@ -98,10 +100,14 @@ public class GestionDePacientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblTablaPaciente);
 
         jLabel1.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gestion de Pacientes");
 
+        btnAgregar.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +115,9 @@ public class GestionDePacientes extends javax.swing.JFrame {
             }
         });
 
+        btnModificar.setBackground(new java.awt.Color(255, 204, 0));
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(0, 0, 0));
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +125,9 @@ public class GestionDePacientes extends javax.swing.JFrame {
             }
         });
 
+        btnEliminar.setBackground(new java.awt.Color(255, 0, 0));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +135,9 @@ public class GestionDePacientes extends javax.swing.JFrame {
             }
         });
 
+        btnRegresar.setBackground(new java.awt.Color(0, 102, 0));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
