@@ -4,7 +4,8 @@
  */
 package Vistas;
 
-import Controller.Medicamento;
+import Controller.*;
+
 
 /**
  *
@@ -13,6 +14,10 @@ import Controller.Medicamento;
 public class Principal extends javax.swing.JFrame {
 
     public static Medicamento _Controlador = new Medicamento();
+    public static ConsultorioImpl _consultorioImpl = new ConsultorioImpl();
+    public static MedicosImpl _medicosImpl = new MedicosImpl();
+    public static RecetasMedicasImpl _recetasMedicasImpl = new RecetasMedicasImpl();
+    public static PacientesImpl _pacientesImpl = new PacientesImpl();
     
     public Principal() {
         initComponents();
