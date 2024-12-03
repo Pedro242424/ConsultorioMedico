@@ -4,10 +4,7 @@
  */
 package Controller;
 
-/**
- *
- * @author kiwic
- */
+//jeloudah
 public class PacientesImpl {
   
 }
