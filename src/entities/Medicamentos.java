@@ -4,10 +4,7 @@
  */
 package entities;
 
-/**
- *
- * @author kiwic
- */
+//comentario
 public class Medicamentos {
     
     private int id = 0; //Idenfificador unico de medicamento

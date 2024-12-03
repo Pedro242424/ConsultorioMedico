@@ -1,16 +1,21 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package entities;
 
-
-public class medico {
-     private int id= 0;
-    private String nombreMedico = new String();  
+/**
+ *
+ * @author kiwic
+ */
+public class Medicos {
+    private int id= 0;
+    private String nombrepaciente = new String();  
     private String fechanaciemiento = new String(); 
     private int edad = 0; 
     private String telefono = new String();
 
-    public medico(){
-        
+    public Medicos() {
     }
 
     public int getId() {
@@ -22,11 +27,11 @@ public class medico {
     }
 
     public String getNombrepaciente() {
-        return nombreMedico;
+        return nombrepaciente;
     }
 
     public void setNombrepaciente(String nombrepaciente) {
-        this.nombreMedico = nombrepaciente;
+        this.nombrepaciente = nombrepaciente;
     }
 
     public String getFechanaciemiento() {
@@ -53,6 +58,4 @@ public class medico {
         this.telefono = telefono;
     }
     
-    
 }
-
