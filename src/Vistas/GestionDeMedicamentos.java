@@ -89,14 +89,14 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTablaMedicamento = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        btnConsulta = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 102));
 
         btnAgregar.setBackground(new java.awt.Color(255, 204, 0));
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,6 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
 
         btnModificar.setBackground(new java.awt.Color(51, 255, 51));
         btnModificar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(0, 0, 0));
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +115,6 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
 
         btnEliminar.setBackground(new java.awt.Color(204, 0, 0));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +124,6 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
 
         btnRegresar.setBackground(new java.awt.Color(204, 204, 255));
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,17 +169,15 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
 
         jLabel1.setBackground(new java.awt.Color(0, 102, 102));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gestion de medicamentos");
 
-        btnConsulta.setBackground(new java.awt.Color(51, 102, 255));
-        btnConsulta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnConsulta.setForeground(new java.awt.Color(0, 0, 0));
-        btnConsulta.setText("Consulta");
-        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setBackground(new java.awt.Color(0, 102, 102));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -195,24 +190,31 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnModificar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnBuscar)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -221,9 +223,7 @@ public void llenarTablaBuscar(List<Medicamentos> medicamentos) {
                         .addGap(39, 39, 39)
                         .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,15 +287,21 @@ Catalogo.setVisible(true);
             _frmMed.setVisible(true);
     }//GEN-LAST:event_btnModificarActionPerformed
 
-    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-        Consultas consultas = new Consultas();
-        
-        consultas.setVisible(true);
-        
-        this.dispose();
-        
-        
-    }//GEN-LAST:event_btnConsultaActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        if(txtBuscar.getText().isEmpty()){
+            this.llenarTabla();
+        } else {
+            List<Medicamentos> resultadosBusqueda = new ArrayList<>();
+
+            for(Medicamentos medicamento : Principal._Controlador.consultarMedicamentosTodos()){
+                if(medicamento.getNombre().toLowerCase().contains(txtBuscar.getText().toLowerCase())){
+                    resultadosBusqueda.add(medicamento);
+                }
+            }
+
+            this.llenarTablaBuscar(resultadosBusqueda);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,12 +340,13 @@ Catalogo.setVisible(true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnConsulta;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTablaMedicamento;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

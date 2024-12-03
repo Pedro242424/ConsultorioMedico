@@ -33,7 +33,6 @@ public class Principal extends javax.swing.JFrame {
         btnTerminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        btnConsulta = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnAltaPaciente = new javax.swing.JButton();
 
@@ -42,12 +41,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("--------MENU PRINCIPAL--------");
 
         btnAltaCatalogo.setBackground(new java.awt.Color(0, 255, 255));
         btnAltaCatalogo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnAltaCatalogo.setForeground(new java.awt.Color(0, 0, 0));
         btnAltaCatalogo.setText("Gestion de medicamentos");
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +54,6 @@ public class Principal extends javax.swing.JFrame {
 
         btnTerminar.setBackground(new java.awt.Color(204, 0, 0));
         btnTerminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnTerminar.setForeground(new java.awt.Color(0, 0, 0));
         btnTerminar.setText("Terminar");
         btnTerminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,16 +87,6 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        btnConsulta.setBackground(new java.awt.Color(204, 204, 0));
-        btnConsulta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnConsulta.setForeground(new java.awt.Color(0, 0, 0));
-        btnConsulta.setText(" Consultas");
-        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaActionPerformed(evt);
-            }
-        });
-
         jButton1.setBackground(new java.awt.Color(102, 0, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton1.setText("Consulta Medica");
@@ -112,7 +98,6 @@ public class Principal extends javax.swing.JFrame {
 
         btnAltaPaciente.setBackground(new java.awt.Color(255, 204, 204));
         btnAltaPaciente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnAltaPaciente.setForeground(new java.awt.Color(0, 0, 0));
         btnAltaPaciente.setText("Alta Paciente");
         btnAltaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,8 +122,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                                    .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                                    .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 231, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnTerminar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
@@ -159,9 +143,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnAltaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTerminar))
@@ -205,14 +187,6 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0); 
         
     }//GEN-LAST:event_btnTerminarActionPerformed
-
-    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-        Consultas consultas = new Consultas();
-        
-        consultas.setVisible(true);
-        
-        this.dispose();
-    }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Consultas2 regresar = new Consultas2();
@@ -271,7 +245,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltaCatalogo;
     private javax.swing.JButton btnAltaPaciente;
-    private javax.swing.JButton btnConsulta;
     private javax.swing.JButton btnTerminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
