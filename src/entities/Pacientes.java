@@ -11,8 +11,8 @@ public class Pacientes {
     private String direccion = new String(); 
     private String fechanaciemiento = new String();
     private int edad = 0; 
-    private double estatura = 0;
-    private double peso = 0;
+    private double estatura = 0.00;
+    private double peso = 0.00;
     private Medicamentos alergias = new Medicamentos();
     private String telefono = new String();
     

@@ -4,16 +4,58 @@
  */
 package Vistas;
 
+import Controller.PacientesImpl;
+import entities.Pacientes;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+
 
 
 
 public class AltaPaciente extends javax.swing.JFrame {
+    //aqui
+    GestionDePacientes _frmTablaPaciente = new GestionDePacientes();
+    int index = 0;
     
- 
-    public AltaPaciente() {
+        public AltaPaciente() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
-   
+    
+     public AltaPaciente(JFrame frame, int index) {
+        initComponents();
+        this._frmTablaPaciente=(GestionDePacientes) frame; //this._frmTablaMedicamento = (GestionDeMedicamentos) frame;  
+        this.setLocationRelativeTo(null);
+        this.index = index;
+        
+        
+        if(index > -1){
+            this.llenarCampos();
+        }
+        
+    }
+    
+    public void llenarCampos(){
+         
+         Pacientes _pacie = Principal._pacientesImpl.consultarPacienteId(index);
+         
+         this.txtId.setText(""+_pacie.getId());
+         this.txtNombre.setText(""+_pacie.getNombrepaciente());
+         this.txtDireccion.setText(_pacie.getDireccion());
+         this.txtTelefono.setText(""+_pacie.getTelefono());
+         this.txtEdad.setText(""+_pacie.getEdad());
+         this.txtEstatura.setText(""+_pacie.getEstatura());
+         this.txtPeso.setText(""+_pacie.getPeso());
+         this.txtFechaDeNacimiento.setText(""+_pacie.getFechanaciemiento());
+         
+         
+         
+     }
+    
+    // Método para llenar la tabla con todos los medicamentos registrados.
+
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,7 +79,9 @@ public class AltaPaciente extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
-        ComboBoxAlergias = new javax.swing.JComboBox<>();
+        cmbAlergias = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        txtFechaDeNacimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +123,11 @@ public class AltaPaciente extends javax.swing.JFrame {
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(204, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -94,7 +143,16 @@ public class AltaPaciente extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("ID:");
 
-        ComboBoxAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "paracetamol", "ibuprofenos ", "naproxeno", "cacahuate", " " }));
+        cmbAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "paracetamol", "ibuprofenos ", "naproxeno", "cacahuate", " " }));
+        cmbAlergias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAlergiasActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Fecha de nacimiento");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,7 +165,7 @@ public class AltaPaciente extends javax.swing.JFrame {
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(352, Short.MAX_VALUE)
+                .addContainerGap(387, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(345, 345, 345))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -124,20 +182,22 @@ public class AltaPaciente extends javax.swing.JFrame {
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ComboBoxAlergias, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbAlergias, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
                             .addComponent(txtEdad, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEstatura, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDireccion)
                             .addComponent(txtPeso)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))))
+                            .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(txtFechaDeNacimiento))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -170,8 +230,10 @@ public class AltaPaciente extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(ComboBoxAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                    .addComponent(cmbAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(txtFechaDeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -186,23 +248,63 @@ public class AltaPaciente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        
-          Principal regresar = new Principal();
-        
-        regresar.setVisible(true);
+
         
         this.dispose();
         
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        try{   
+           
+            Pacientes _Paciente = new Pacientes();
+
+            _Paciente.setId(Integer.parseInt(txtId.getText()));
+            _Paciente.setNombrepaciente(txtNombre.getText());
+            _Paciente.setDireccion(txtDireccion.getText());
+            _Paciente.setTelefono(txtTelefono.getText());
+            _Paciente.setEdad(Integer.parseInt(txtEdad.getText()));
+            _Paciente.setEstatura(Double.parseDouble(txtEstatura.getText()));
+            _Paciente.setPeso(Double.parseDouble(txtPeso.getText()));
+            _Paciente.setAlergias(null);
+            _Paciente.setFechanaciemiento(txtFechaDeNacimiento.getText());
+            
+            
+     
+            //metodo para guardar
+            if(this.index > -1){
+                Principal._pacientesImpl.editarPacientes(_Paciente, index);
+            }else{
+                Principal._pacientesImpl.agregarPacientes(_Paciente);
+            }//termina el metodo para guardar y agregar
+            
+           
+            _frmTablaPaciente.llenarTabla();
+            
+            this.dispose();
+        
+        }catch (Exception ex){
+         ex.printStackTrace();
+         
+        }
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void cmbAlergiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAlergiasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbAlergiasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,10 +342,11 @@ public class AltaPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBoxAlergias;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cmbAlergias;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -256,6 +359,7 @@ public class AltaPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtEstatura;
+    private javax.swing.JTextField txtFechaDeNacimiento;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPeso;

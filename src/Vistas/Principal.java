@@ -98,7 +98,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnAltaPaciente.setBackground(new java.awt.Color(255, 204, 204));
         btnAltaPaciente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnAltaPaciente.setText("Alta Paciente");
+        btnAltaPaciente.setText("Gestion De Pacientes");
         btnAltaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaPacienteActionPerformed(evt);
@@ -122,7 +122,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 231, Short.MAX_VALUE))
+                                    .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnTerminar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
@@ -197,7 +197,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnAltaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaPacienteActionPerformed
-        AltaPaciente paciente = new AltaPaciente();
+        GestionDePacientes paciente = new GestionDePacientes();
         
         paciente.setVisible(true);
         
