@@ -27,6 +27,8 @@ public class Medicamento {
         _m.setGravedad(0);
         _m.setPrecio(50.50);
         
+        
+        
         this.registrosMedicamentos.add(_m);
     }
     
