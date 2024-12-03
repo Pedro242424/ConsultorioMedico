@@ -14,7 +14,8 @@ public class paciente {
     private String nombrepaciente = new String();  // Nombre del medicamento puede haber multiples
     private String direccion = new String(); // Ni se porque esta aqui pero bueno
     private String edad = new String(); // Nivel de gravedad en un rango del 0-2
-    
+    private String estatura = new String();
+    private String peso = new String();
     
     public paciente(){
         
@@ -42,6 +43,22 @@ public class paciente {
 
     public void setEdad(String edad) {
         this.edad = edad;
+    }
+
+    public String getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(String estatura) {
+        this.estatura = estatura;
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
     }
     
     
