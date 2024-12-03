@@ -10,8 +10,8 @@ package entities;
  */
 public class Medicos {
     private int id= 0;
-    private String nombrepaciente = new String();  
-    private String fechanaciemiento = new String(); 
+    private String nombreMedico = new String();  
+    private String fechaNaciemiento = new String(); 
     private int edad = 0; 
     private String telefono = new String();
 
@@ -24,22 +24,6 @@ public class Medicos {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNombrepaciente() {
-        return nombrepaciente;
-    }
-
-    public void setNombrepaciente(String nombrepaciente) {
-        this.nombrepaciente = nombrepaciente;
-    }
-
-    public String getFechanaciemiento() {
-        return fechanaciemiento;
-    }
-
-    public void setFechanaciemiento(String fechanaciemiento) {
-        this.fechanaciemiento = fechanaciemiento;
     }
 
     public int getEdad() {
@@ -56,6 +40,22 @@ public class Medicos {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getNombreMedico() {
+        return nombreMedico;
+    }
+
+    public void setNombreMedico(String nombreMedico) {
+        this.nombreMedico = nombreMedico;
+    }
+
+    public String getFechaNaciemiento() {
+        return fechaNaciemiento;
+    }
+
+    public void setFechaNaciemiento(String fechaNaciemiento) {
+        this.fechaNaciemiento = fechaNaciemiento;
     }
     
 }
