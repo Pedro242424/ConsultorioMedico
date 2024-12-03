@@ -16,6 +16,8 @@ public class paciente {
     private String edad = new String(); 
     private String estatura = new String();
     private String peso = new String();
+    private String alergias = new String();
+    private String telefono = new String();
     
     public paciente(){
         
@@ -59,6 +61,22 @@ public class paciente {
 
     public void setPeso(String peso) {
         this.peso = peso;
+    }
+
+    public String getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
     
     
