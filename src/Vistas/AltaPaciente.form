@@ -71,12 +71,13 @@
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtNombre" max="32767" attributes="0"/>
-                              <Component id="txtEdad" max="32767" attributes="0"/>
-                              <Component id="txtEstatura" max="32767" attributes="0"/>
-                              <Component id="txtAlergias" pref="212" max="32767" attributes="0"/>
+                      <Component id="txtId" min="-2" pref="113" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNombre" alignment="0" pref="212" max="32767" attributes="0"/>
+                              <Component id="txtEdad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEstatura" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -91,7 +92,6 @@
                               <Component id="txtTelefono" alignment="0" pref="212" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="txtId" min="-2" pref="113" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -131,7 +131,7 @@
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAlergias" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="88" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -244,8 +244,6 @@
             <Property name="text" type="java.lang.String" value="Alergias:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtAlergias">
-        </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -289,6 +287,22 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtId">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="paracetamol"/>
+                <StringItem index="1" value="ibuprofenos "/>
+                <StringItem index="2" value="naproxeno"/>
+                <StringItem index="3" value="cacahuate"/>
+                <StringItem index="4" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
