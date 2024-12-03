@@ -11,6 +11,7 @@ package entities;
 public class paciente {
     
    
+    private int id= 0;
     private String nombrepaciente = new String();  
     private String direccion = new String(); 
     private int edad = 0; 
@@ -23,6 +24,16 @@ public class paciente {
         
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
     public String getNombrepaciente() {
         return nombrepaciente;
     }
