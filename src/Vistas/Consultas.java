@@ -425,7 +425,15 @@ public class Consultas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRealizarConsultaActionPerformed
 
     private void cmbMedicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMedicoItemStateChanged
-        // TODO add your handling code here:
+                try {
+            if (cmbMedico.getSelectedIndex() > -1) {
+                Medicos _med = Principal._medicosImpl.consultarMedicosId(cmbMedico.getSelectedIndex());
+                this.txtMedico.setText(_med.getNombreMedico());
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_cmbMedicoItemStateChanged
 
     private void cmbMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMedicoActionPerformed

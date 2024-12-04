@@ -132,7 +132,7 @@ public class AltaPaciente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel9.setText("ID:");
 
-        cmbAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "paracetamol", "ibuprofenos ", "naproxeno", "cacahuate", " " }));
+        cmbAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "paracetamol", "ibuprofenos ", "naproxeno", "Oxicodona", " " }));
         cmbAlergias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbAlergiasActionPerformed(evt);
