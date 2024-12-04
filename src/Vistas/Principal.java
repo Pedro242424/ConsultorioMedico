@@ -5,6 +5,8 @@
 package Vistas;
 
 import Controller.*;
+import entities.*;
+import Vistas.*;
 
 
 /**
@@ -21,6 +23,7 @@ public class Principal extends javax.swing.JFrame {
     
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
