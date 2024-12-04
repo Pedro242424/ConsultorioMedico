@@ -48,7 +48,7 @@ public class Consultas extends javax.swing.JFrame {
         // Agrega una nueva fila a la tabla con los atributos del medicamento.
         _modelo.addRow(new Object[]{
             _r.getFolio(),
-         
+            _r.getPaciente(),
         });
     }
     }
