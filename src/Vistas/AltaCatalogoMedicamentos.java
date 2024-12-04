@@ -43,7 +43,7 @@ public class AltaCatalogoMedicamentos extends javax.swing.JFrame {
          this.txtNombre.setText(_med.getNombre());
          this.txaDescripcion.setText(_med.getDescripcion());
          this.txtCantidad.setText(""+_med.getCantidad());
-         this.cmbGravedad.setSelectedIndex(_med.getGravedad() ); ;
+         this.cmbGravedad.setSelectedIndex(_med.getGravedad() ); 
          this.txtPrecio.setText(""+_med.getPrecio());
          
          

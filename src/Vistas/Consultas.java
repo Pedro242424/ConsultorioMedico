@@ -30,11 +30,30 @@ public class Consultas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.mostrarPacientes();
         this.mostrarMedico();
+        this.llenarTabla();
         
         this.txtConsultorio.setText(_con.getNombre());
         this.txtFolio.setText(String.format("%06d", Principal._recetasMedicasImpl.consultarRecetaTodos().size() + 1));
         this.txtFecha.setText(String.valueOf(_sdf.format(new Date())));
     }
+    
+    public void llenarTabla() {
+    // Obtiene el modelo de datos de la tabla gráfica.
+    DefaultTableModel _modelo = (DefaultTableModel) this.tblConsulta.getModel();
+    
+    _modelo.setRowCount(0); // Limpia la tabla antes de agregar nuevos datos.
+    
+    // Itera sobre todos los medicamentos obtenidos del controlador.
+    for (RecetasMedicas _r : Principal._recetasMedicasImpl.consultarRecetaTodos()) {
+        // Agrega una nueva fila a la tabla con los atributos del medicamento.
+        _modelo.addRow(new Object[]{
+            _r.getFolio(),
+         
+        });
+    }
+    }
+    
+    
     //cmbMedico
      public void mostrarPacientes() {
         cmbPaciente.removeAllItems();
@@ -116,7 +135,7 @@ public class Consultas extends javax.swing.JFrame {
         txtConsultorio = new javax.swing.JFormattedTextField();
         txtFecha = new javax.swing.JFormattedTextField();
         cmbMedico = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnHacerConsulta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,10 +271,10 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Hacer una Consulta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnHacerConsulta.setText("Hacer una Consulta");
+        btnHacerConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHacerConsultaActionPerformed(evt);
             }
         });
 
@@ -317,7 +336,7 @@ public class Consultas extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(btnRealizarConsulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHacerConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
@@ -359,7 +378,7 @@ public class Consultas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRealizarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHacerConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -432,15 +451,15 @@ public class Consultas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbMedicoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHacerConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHacerConsultaActionPerformed
        
-         AltaConsulta Alta = new AltaConsulta();
+        AltaConsulta Alta = new AltaConsulta();
 
         Alta.setVisible(true);
 
         this.dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnHacerConsultaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -479,11 +498,11 @@ public class Consultas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHacerConsulta;
     private javax.swing.JButton btnRealizarConsulta;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbMedico;
     private javax.swing.JComboBox<String> cmbPaciente;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

@@ -4,7 +4,9 @@
  */
 package Vistas;
 
+import entities.Consultorio;
 import entities.Medicamentos;
+import entities.RecetasMedicas;
 import javax.swing.JFrame;
 
 /**
@@ -13,7 +15,7 @@ import javax.swing.JFrame;
  */
 public class AltaConsulta extends javax.swing.JFrame {
  
- //  Consultas _frmTablaConsulta = Consultas();
+   Consultas _frmTablaConsulta = new Consultas();
    int index = 0;
     /**
      * Creates new form AltaConsulta
@@ -21,6 +23,36 @@ public class AltaConsulta extends javax.swing.JFrame {
     public AltaConsulta() {
         this.setLocationRelativeTo(null);
     }
+    
+     public AltaConsulta(JFrame frame, int index) {
+        initComponents();
+        this._frmTablaConsulta=(Consultas) frame; //this._frmTablaMedicamento = (GestionDeMedicamentos) frame;  
+        this.setLocationRelativeTo(null);
+        this.index = index;
+        
+        
+        if(index > -1){
+            this.llenarCampos();
+        }
+        
+    }
+    
+    public void llenarCampos(){
+         
+         RecetasMedicas _camp = Principal._recetasMedicasImpl.consultarRecetaId(index);
+         
+         this.txtNombre.setText(""+_camp.getListaMedicamentos());
+         this.cmbId.setSelectedIndex(_camp.getFolio());
+         //this.txtId.setText(""+_med.getId());
+         //this.txtNombre.setText(_med.getNombre());
+         //this.txaDescripcion.setText(_med.getDescripcion());
+         //this.txtCantidad.setText(""+_med.getCantidad());
+         //this.cmbGravedad.setSelectedIndex(_med.getGravedad() ); ;
+         //this.txtPrecio.setText(""+_med.getPrecio());
+         
+         
+     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,8 +66,8 @@ public class AltaConsulta extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        cmbId = new javax.swing.JComboBox<>();
+        txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -52,14 +84,18 @@ public class AltaConsulta extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Alta Consulta");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,8 +117,8 @@ public class AltaConsulta extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, 141, Short.MAX_VALUE)
-                            .addComponent(jTextField1)))
+                            .addComponent(cmbId, 0, 141, Short.MAX_VALUE)
+                            .addComponent(txtNombre)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -102,11 +138,11 @@ public class AltaConsulta extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
@@ -133,6 +169,35 @@ public class AltaConsulta extends javax.swing.JFrame {
         this.dispose();
      
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+         try{   
+           
+            RecetasMedicas _Consultas = new RecetasMedicas();
+            
+            _Consultas.setFolio(Integer.parseInt(cmbId.getSelectedItem().toString()));
+            //_Consultas.setPaciente(txtNombre.getText());
+            
+            
+     
+            //metodo para guardar
+            if(this.index > -1){
+                Principal._recetasMedicasImpl.editarReceta(_Consultas, index);
+            }else{
+                Principal._recetasMedicasImpl.agregarReceta(_Consultas);
+            }//termina el metodo para guardar y agregar
+            
+           
+            _frmTablaConsulta.llenarTabla();
+            
+            this.dispose();
+        
+        }catch (Exception ex){
+         ex.printStackTrace();
+         
+        }
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,11 +237,11 @@ public class AltaConsulta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

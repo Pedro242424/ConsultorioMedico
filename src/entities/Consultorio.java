@@ -10,6 +10,7 @@ package entities;
  */
 public class Consultorio {
     
+    
     private String nombre = new String();
     private String direccion = new String();
     private String correo = new String();
