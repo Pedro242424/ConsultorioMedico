@@ -24,19 +24,15 @@ public class MedicosImpl {
         _med.setFechaNaciemiento("19/02/1976");
         _med.setEdad(48);
         _med.setTelefono("622-156-8512");
-        Medico.add(_med);
-
         this.Medico.add(_med);
         
                 Medicos _med2 = new Medicos();
         
-        _med2.setId(0);
+        _med2.setId(1);
         _med2.setNombreMedico("Carlos Saltamontes Vega");
         _med2.setFechaNaciemiento("19/06/1985");
         _med2.setEdad(48);
         _med2.setTelefono("622-500-8559");
-        Medico.add(_med2);
-
         this.Medico.add(_med2);
     }
     

@@ -4,6 +4,10 @@
  */
 package Vistas;
 
+import Vistas.Principal;
+import entities.Medicos;
+import entities.Pacientes;
+
 /**
  *
  * @author kiwic
@@ -15,7 +19,17 @@ public class VstMedico extends javax.swing.JFrame {
      */
     public VstMedico() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        mostrarMedico();
     }
+    
+    public void mostrarMedico() {
+
+        cmbMedico.removeAllItems();
+        for (Medicos _med : Principal._medicosImpl.consultarMedicosTodos()) {
+            this.cmbMedico.addItem(_med.getNombreMedico());
+        }
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,6 +103,11 @@ public class VstMedico extends javax.swing.JFrame {
         });
 
         cmbMedico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbMedico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbMedicoItemStateChanged(evt);
+            }
+        });
 
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +212,22 @@ public class VstMedico extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void cmbMedicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMedicoItemStateChanged
+                try {
+            if (cmbMedico.getSelectedIndex() > -1) {
+                Medicos _med = Principal._medicosImpl.consultarMedicosId(cmbMedico.getSelectedIndex());
+                this.txtId.setText(""+_med.getId());
+                this.txtNombreMedico.setText(_med.getNombreMedico());
+                this.txtFechaNacimiento.setText(""+_med.getFechaNaciemiento());
+                this.txtEdad.setText(""+_med.getEdad());
+                this.txtTelefono.setText(""+_med.getTelefono());
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_cmbMedicoItemStateChanged
 
     /**
      * @param args the command line arguments
