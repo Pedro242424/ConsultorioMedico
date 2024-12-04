@@ -38,6 +38,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         btnAltaPaciente = new javax.swing.JButton();
+        btnMedico = new javax.swing.JButton();
+        btnConsultorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +50,7 @@ public class Principal extends javax.swing.JFrame {
 
         btnAltaCatalogo.setBackground(new java.awt.Color(0, 255, 255));
         btnAltaCatalogo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnAltaCatalogo.setForeground(new java.awt.Color(0, 0, 0));
         btnAltaCatalogo.setText("Gestion de medicamentos");
         btnAltaCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,10 +104,31 @@ public class Principal extends javax.swing.JFrame {
 
         btnAltaPaciente.setBackground(new java.awt.Color(255, 204, 204));
         btnAltaPaciente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnAltaPaciente.setForeground(new java.awt.Color(0, 0, 0));
         btnAltaPaciente.setText("Gestion De Pacientes");
         btnAltaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltaPacienteActionPerformed(evt);
+            }
+        });
+
+        btnMedico.setBackground(new java.awt.Color(0, 102, 102));
+        btnMedico.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnMedico.setForeground(new java.awt.Color(0, 0, 0));
+        btnMedico.setText("Medico");
+        btnMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMedicoActionPerformed(evt);
+            }
+        });
+
+        btnConsultorio.setBackground(new java.awt.Color(51, 255, 204));
+        btnConsultorio.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnConsultorio.setForeground(new java.awt.Color(0, 0, 0));
+        btnConsultorio.setText("Consultorio");
+        btnConsultorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultorioActionPerformed(evt);
             }
         });
 
@@ -131,7 +155,12 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnAltaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnConsultorio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAltaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(137, 137, 137)
+                                .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -143,9 +172,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
                 .addGap(37, 37, 37)
-                .addComponent(btnAltaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAltaPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
                 .addGap(41, 41, 41)
-                .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAltaCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                    .addComponent(btnConsultorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,6 +240,26 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAltaPacienteActionPerformed
 
+    private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
+        
+        VstMedico medico = new VstMedico();
+        
+        medico.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_btnMedicoActionPerformed
+
+    private void btnConsultorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultorioActionPerformed
+        
+        vstConsultorio consultorio = new vstConsultorio();
+        
+        consultorio.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_btnConsultorioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -248,6 +301,8 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltaCatalogo;
     private javax.swing.JButton btnAltaPaciente;
+    private javax.swing.JButton btnConsultorio;
+    private javax.swing.JButton btnMedico;
     private javax.swing.JButton btnTerminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
