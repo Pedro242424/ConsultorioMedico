@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class Consultas extends javax.swing.JFrame {
     SimpleDateFormat _sdf = new SimpleDateFormat("d / MMMM / yyyy");
     DecimalFormat _df = new DecimalFormat("#,##0.00");
+    Consultorio _con = Principal._consultorioImpl.consultarConsultorioId(0);
     /**
      * Creates new form Consultas2
      */
@@ -29,7 +30,8 @@ public class Consultas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.mostrarPacientes();
         this.mostrarMedico();
-        this.txtConsultorio.setText("");
+        
+        this.txtConsultorio.setText(_con.getNombre());
         this.txtFolio.setText(String.format("%06d", Principal._recetasMedicasImpl.consultarRecetaTodos().size() + 1));
         this.txtFecha.setText(String.valueOf(_sdf.format(new Date())));
     }

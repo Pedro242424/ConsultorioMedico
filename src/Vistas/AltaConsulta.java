@@ -4,17 +4,22 @@
  */
 package Vistas;
 
+import entities.Medicamentos;
+import javax.swing.JFrame;
+
 /**
  *
  * @author kiwic
  */
 public class AltaConsulta extends javax.swing.JFrame {
-
+ 
+ //  Consultas _frmTablaConsulta = Consultas();
+   int index = 0;
     /**
      * Creates new form AltaConsulta
      */
     public AltaConsulta() {
-        initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -125,9 +130,8 @@ public class AltaConsulta extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 
-
         this.dispose();
-        
+     
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

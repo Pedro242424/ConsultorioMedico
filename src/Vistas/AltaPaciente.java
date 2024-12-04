@@ -4,11 +4,11 @@
  */
 package Vistas;
 
-import Controller.PacientesImpl;
+
 import entities.Medicamentos;
 import entities.Pacientes;
 import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
+
 
 
 
