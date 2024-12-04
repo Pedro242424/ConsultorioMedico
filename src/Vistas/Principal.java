@@ -192,7 +192,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTerminarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Consultas2 regresar = new Consultas2();
+        Consultas regresar = new Consultas();
         
         regresar.setVisible(true);
         
