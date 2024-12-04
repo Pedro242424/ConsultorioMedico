@@ -29,7 +29,7 @@ public class Consultas2 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        this.txtConsultorio.setText("Patito SA de CV");
+        this.txtConsultorio.setText("");
         this.txtMedico.setText(_md.getNombreMedico());
         this.txtFolio.setText(String.format("%06d", Principal._recetasMedicasImpl.consultarRecetaTodos().size() + 1));
         this.txtFecha.setText(String.valueOf(_sdf.format(new Date())));
@@ -37,14 +37,14 @@ public class Consultas2 extends javax.swing.JFrame {
     
      public void mostrarClientes() {
 
-        cmbPaciente.removeAllItems();
+       // cmbPaciente.removeAllItems();
 
         for (Pacientes _pac : Principal._pacientesImpl.consultarPacienteTodos()) {
             this.cmbPaciente.addItem(_pac.getNombrepaciente());
         }
     }
 
-    public void agregarDatoProducto(Medicamentos _med) {
+    public void agregarDatoMedicamento(Medicamentos _med) {
         
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(SwingConstants.RIGHT);
