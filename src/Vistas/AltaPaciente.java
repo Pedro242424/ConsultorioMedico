@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controller.PacientesImpl;
+import entities.Medicamentos;
 import entities.Pacientes;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
@@ -27,6 +28,7 @@ public class AltaPaciente extends javax.swing.JFrame {
         initComponents();
         this._frmTablaPaciente=(GestionDePacientes) frame; //this._frmTablaMedicamento = (GestionDeMedicamentos) frame;  
         this.setLocationRelativeTo(null);
+        this.mostrarMedicamento();
         this.index = index;
         
         
@@ -35,6 +37,12 @@ public class AltaPaciente extends javax.swing.JFrame {
         }
         
     }
+    public void mostrarMedicamento() {
+
+        for (Medicamentos _med : Principal._Controlador.consultarMedicamentosTodos()) {
+            this.cmbAlergias.addItem(_med.getNombre());
+        }
+    } 
     
     public void llenarCampos(){
          
@@ -47,6 +55,7 @@ public class AltaPaciente extends javax.swing.JFrame {
          this.txtEdad.setText(""+_pacie.getEdad());
          this.txtEstatura.setText(""+_pacie.getEstatura());
          this.txtPeso.setText(""+_pacie.getPeso());
+         this.cmbAlergias.setName(""+_pacie.getAlergias() );
          this.txtFechaDeNacimiento.setText(""+_pacie.getFechanaciemiento());
          
          
@@ -132,7 +141,7 @@ public class AltaPaciente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel9.setText("ID:");
 
-        cmbAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "paracetamol", "ibuprofenos ", "naproxeno", "Oxicodona", " " }));
+        cmbAlergias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna" }));
         cmbAlergias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbAlergiasActionPerformed(evt);
@@ -260,7 +269,7 @@ public class AltaPaciente extends javax.swing.JFrame {
             _Paciente.setEdad(Integer.parseInt(txtEdad.getText()));
             _Paciente.setEstatura(Double.parseDouble(txtEstatura.getText()));
             _Paciente.setPeso(Double.parseDouble(txtPeso.getText()));
-            _Paciente.setAlergias(null);
+            _Paciente.setAlergias(cmbAlergias.getSelectedItem().toString());
             _Paciente.setFechanaciemiento(txtFechaDeNacimiento.getText());
             
             

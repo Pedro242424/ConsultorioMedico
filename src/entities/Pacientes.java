@@ -13,7 +13,7 @@ public class Pacientes {
     private int edad = 0; 
     private double estatura = 0.00;
     private double peso = 0.00;
-    private Medicamentos alergias = new Medicamentos();
+    private String alergias = new String();
     private String telefono = new String();
     
     public Pacientes(){
@@ -75,12 +75,12 @@ public class Pacientes {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-
-    public Medicamentos getAlergias() {
+    
+    public String getAlergias() {
         return alergias;
     }
 
-    public void setAlergias(Medicamentos alergias) {
+    public void setAlergias(String alergias) {
         this.alergias = alergias;
     }
 

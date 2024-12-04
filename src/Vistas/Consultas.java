@@ -35,9 +35,7 @@ public class Consultas extends javax.swing.JFrame {
     }
     //cmbMedico
      public void mostrarPacientes() {
-
         cmbPaciente.removeAllItems();
-
         for (Pacientes _pac : Principal._pacientesImpl.consultarPacienteTodos()) {
             this.cmbPaciente.addItem(_pac.getNombrepaciente());
         }
@@ -46,7 +44,6 @@ public class Consultas extends javax.swing.JFrame {
      public void mostrarMedico() {
 
         cmbMedico.removeAllItems();
-
         for (Medicos _med : Principal._medicosImpl.consultarMedicosTodos()) {
             this.cmbMedico.addItem(_med.getNombreMedico());
         }

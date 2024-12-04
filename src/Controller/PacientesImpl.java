@@ -22,8 +22,8 @@ public class PacientesImpl {
             _pac1.setFechanaciemiento("01/01/2007");
             _pac1.setEdad(19);
             _pac1.setEstatura(1.70);
-            _pac1.setAlergias(null);
-            _pac1.setTelefono("6221008888");
+            _pac1.setAlergias("Ninguna");
+            _pac1.setTelefono("622-100-8888");
             this.registrosPacientes.add(_pac1);
             
             
@@ -35,8 +35,8 @@ public class PacientesImpl {
             _pac2.setFechanaciemiento("01/01/2004");
             _pac2.setEdad(21);
             _pac2.setEstatura(1.80);
-            _pac2.setAlergias(null);
-            _pac2.setTelefono("6331459064");
+            _pac2.setAlergias("Ninguna");
+            _pac2.setTelefono("633-145-9064");
             this.registrosPacientes.add(_pac2);
                
         }

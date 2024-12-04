@@ -261,12 +261,8 @@
         <Component class="javax.swing.JComboBox" name="cmbAlergias">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="paracetamol"/>
-                <StringItem index="1" value="ibuprofenos "/>
-                <StringItem index="2" value="naproxeno"/>
-                <StringItem index="3" value="Oxicodona"/>
-                <StringItem index="4" value=" "/>
+              <StringArray count="1">
+                <StringItem index="0" value="Ninguna"/>
               </StringArray>
             </Property>
           </Properties>
