@@ -241,7 +241,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
         
-        VstMedico medico = new VstMedico();
+        DatosMedico medico = new DatosMedico();
         
         medico.setVisible(true);
         
@@ -251,7 +251,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnConsultorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultorioActionPerformed
 
-        vstConsultorio consultorio = new vstConsultorio();
+        DatosConsultorio consultorio = new DatosConsultorio();
 
         consultorio.setVisible(true);
 

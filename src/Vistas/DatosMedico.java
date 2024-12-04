@@ -4,20 +4,20 @@
  */
 package Vistas;
 
-import Vistas.Principal;
+
 import entities.Medicos;
-import entities.Pacientes;
+
 
 /**
  *
  * @author kiwic
  */
-public class VstMedico extends javax.swing.JFrame {
+public class DatosMedico extends javax.swing.JFrame {
 
     /**
      * Creates new form VstMedico
      */
-    public VstMedico() {
+    public DatosMedico() {
         initComponents();
         this.setLocationRelativeTo(null);
         mostrarMedico();
@@ -246,20 +246,21 @@ public class VstMedico extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VstMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VstMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VstMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VstMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VstMedico().setVisible(true);
+                new DatosMedico().setVisible(true);
             }
         });
     }
